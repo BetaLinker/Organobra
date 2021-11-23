@@ -1,0 +1,24 @@
+.dialog-content-wrapper{
+    width: 60vw;
+    height: 80vh;
+}
+
+.header{
+    padding: 10px;
+    background-color: #325ea7;
+    color: white;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.header span{
+    vertical-align: -webkit-baseline-middle;
+}
+
+.content{
+    padding: 20px;
+}
+
+.content mat-button{
+    height: 25px;
+}

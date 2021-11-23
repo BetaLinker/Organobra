@@ -16,11 +16,15 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { QuestionModalComponent } from './question-modal/question-modal.component';
+import { MainPageComponent } from './main-page/main-page.component';
+import { ObraFormComponent } from './obra-form/obra-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuestionModalComponent
+    QuestionModalComponent,
+    MainPageComponent,
+    ObraFormComponent
   ],
   imports: [
     BrowserModule,
