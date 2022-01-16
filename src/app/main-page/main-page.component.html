@@ -1,152 +1,224 @@
-<mat-card class="header">
-    Organobra - Serviço de Organização
-</mat-card>
+<div class="body" fxLayout="column" fxLayoutAlign="start center" >
 
-<mat-accordion class="card" multi>
-    <mat-expansion-panel>
-    <mat-expansion-panel-header>
-        <mat-panel-title>
-          <mat-icon>event</mat-icon>
-          Vistorias Agendadas
-        </mat-panel-title>          
-    </mat-expansion-panel-header>
-    Vistorias Agendadas
-    </mat-expansion-panel>
-</mat-accordion>
+  <div class="header" fxLayout="column" fxLayoutAlign="center start" fxFill fxFlex="10">
 
-<mat-accordion class="card" multi>
-  <mat-expansion-panel>
-  <mat-expansion-panel-header>
-      <mat-panel-title>
-        <mat-icon>receipt</mat-icon>
-        Obras Mensais
-      </mat-panel-title>          
-  </mat-expansion-panel-header>
-  
-  
-  <mat-form-field appearance="standard">
-    <mat-label>Filter</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
-  </mat-form-field>
-  
-  <div class="mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource" matSort>
-  
-      <!-- Data Column -->
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
-        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
-      </ng-container>
-  
-      <!-- Progress Column -->
-      <ng-container matColumnDef="progress">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Progress </th>
-        <td mat-cell *matCellDef="let row"> {{row.progress}}% </td>
-      </ng-container>
-  
-      <!-- Name Column -->
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
-        <td mat-cell *matCellDef="let row"> {{row.name}} </td>
-      </ng-container>
-  
-      <!-- Fruit Column -->
-      <ng-container matColumnDef="fruit">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Fruit </th>
-        <td mat-cell *matCellDef="let row"> {{row.fruit}} </td>
-      </ng-container>
+    <div fxLayout="row" fxLayoutAlign="start start">
+      <a mat-button href="/" fxLayout="row">
+        Organobra - Serviço de Organização
+      </a>
+      <a mat-button (click)="openFormDialog()">
+        Adicionar Novo Registro
+      </a>  
+    </div>
+    
 
-      <!-- Fruit Column -->
-      <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Ações </th>
-        <td mat-cell *matCellDef="let row"> 
-            <mat-icon>description</mat-icon> 
-            <mat-icon>delete</mat-icon>
-        </td>
-      </ng-container>
-  
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  
-      <!-- Row shown when there is no matching data. -->
-      <tr class="mat-row" *matNoDataRow>
-        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
-      </tr>
-    </table>
-  
-    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
-   </div>
-  </mat-expansion-panel>
-</mat-accordion>
+  </div>
 
-<mat-accordion class="card" multi>
-  <mat-expansion-panel>
-  <mat-expansion-panel-header>
-      <mat-panel-title>
-        <mat-icon>folder</mat-icon>
-        Arquivo
-      </mat-panel-title>          
-  </mat-expansion-panel-header>
-  
-  
-  <mat-form-field appearance="standard">
-    <mat-label>Filter</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
-  </mat-form-field>
-  
-  <div class="mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource" matSort>
-  
-      <!-- ID Column -->
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
-        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
-      </ng-container>
-  
-      <!-- Progress Column -->
-      <ng-container matColumnDef="progress">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Progress </th>
-        <td mat-cell *matCellDef="let row"> {{row.progress}}% </td>
-      </ng-container>
-  
-      <!-- Name Column -->
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
-        <td mat-cell *matCellDef="let row"> {{row.name}} </td>
-      </ng-container>
-  
-      <!-- Fruit Column -->
-      <ng-container matColumnDef="fruit">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Fruit </th>
-        <td mat-cell *matCellDef="let row"> {{row.fruit}} </td>
-      </ng-container>
+  <div class="content" fxFill fxFlex="100" >
 
-      <!-- Fruit Column -->
-      <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Ações </th>
-        <td mat-cell *matCellDef="let row"> 
-            <mat-icon>description</mat-icon> 
-            <mat-icon>delete</mat-icon>
-        </td>
-      </ng-container>
-  
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  
-      <!-- Row shown when there is no matching data. -->
-      <tr class="mat-row" *matNoDataRow>
-        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
-      </tr>
-    </table>
-  
-    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
-   </div>
+    <mat-accordion class="card" multi>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon>receipt</mat-icon>
+              Obras Mensais
+            </mat-panel-title>          
+        </mat-expansion-panel-header>
+        
+        
+        <mat-form-field appearance="standard">
+          <mat-label>Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+        </mat-form-field>
+        
+        <div class="mat-elevation-z8 table">
+          <table mat-table [dataSource]="dataSource" matSort>
+        
+            <!-- Data Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+              <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+            </ng-container>
+        
+            <!-- Progress Column -->
+            <ng-container matColumnDef="progress">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Progress </th>
+              <td mat-cell *matCellDef="let row"> {{row.progress}}% </td>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+              <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+            </ng-container>
+        
+            <!-- Fruit Column -->
+            <ng-container matColumnDef="fruit">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Fruit </th>
+              <td mat-cell *matCellDef="let row"> {{row.fruit}} </td>
+            </ng-container>
 
-  </mat-expansion-panel>
+            <!-- Fruit Column -->
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Ações </th>
+              <td mat-cell *matCellDef="let row"> 
+                  <mat-icon>description</mat-icon> 
+                  <mat-icon>delete</mat-icon>
+              </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+          </table>
+        
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
 
-</mat-accordion>
+    <div class="divisor"></div>
 
-<div fxLayout="row" fxLayoutAlign="end center">
-  <button mat-raised-button color="primary" (click)="openFormDialog()">Adicionar Novo Registro</button>
-</div>
+    <mat-accordion class="card" multi>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon>receipt</mat-icon>
+              Obras Mensais
+            </mat-panel-title>          
+        </mat-expansion-panel-header>
+        
+        
+        <mat-form-field appearance="standard">
+          <mat-label>Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+        </mat-form-field>
+        
+        <div class="mat-elevation-z8 table">
+          <table mat-table [dataSource]="dataSource" matSort>
+        
+            <!-- Data Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+              <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+            </ng-container>
+        
+            <!-- Progress Column -->
+            <ng-container matColumnDef="progress">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Progress </th>
+              <td mat-cell *matCellDef="let row"> {{row.progress}}% </td>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+              <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+            </ng-container>
+        
+            <!-- Fruit Column -->
+            <ng-container matColumnDef="fruit">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Fruit </th>
+              <td mat-cell *matCellDef="let row"> {{row.fruit}} </td>
+            </ng-container>
+
+            <!-- Fruit Column -->
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Ações </th>
+              <td mat-cell *matCellDef="let row"> 
+                  <mat-icon>description</mat-icon> 
+                  <mat-icon>delete</mat-icon>
+              </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+          </table>
+        
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <div class="divisor"></div>
+
+    <mat-accordion class="card" multi>
+      <mat-expansion-panel>
+      <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-icon>folder</mat-icon>
+            Arquivo
+          </mat-panel-title>          
+      </mat-expansion-panel-header>
+      
+      
+      <mat-form-field appearance="standard">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+      </mat-form-field>
+      
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+      
+          <!-- ID Column -->
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+            <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+          </ng-container>
+      
+          <!-- Progress Column -->
+          <ng-container matColumnDef="progress">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Progress </th>
+            <td mat-cell *matCellDef="let row"> {{row.progress}}% </td>
+          </ng-container>
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+            <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+          </ng-container>
+      
+          <!-- Fruit Column -->
+          <ng-container matColumnDef="fruit">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Fruit </th>
+            <td mat-cell *matCellDef="let row"> {{row.fruit}} </td>
+          </ng-container>
+
+          <!-- Fruit Column -->
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Ações </th>
+            <td mat-cell *matCellDef="let row"> 
+                <mat-icon>description</mat-icon> 
+                <mat-icon>delete</mat-icon>
+            </td>
+          </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+          <!-- Row shown when there is no matching data. -->
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+          </tr>
+        </table>
+      
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+      </div>
+
+      </mat-expansion-panel>
+
+    </mat-accordion>
+
+
+  </div>
+  
+</div>  
 
