@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AfterViewInit, ViewChild} from '@angular/core';
+import { ViewChild} from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
@@ -30,17 +30,15 @@ const NAMES: string[] = [
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name', 'progress', 'fruit', 'actions'];
+  displayedColumns: string[] = ['id', 'name', 'progress', 'fruit'];
   dataSource: MatTableDataSource<UserData>;
 
-  @ViewChild(MatPaginator)
-   paginator!: MatPaginator;
-  @ViewChild(MatSort)
-   sort!: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor(public dialog: MatDialog) { 
     // Create 100 users
-    const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
+    const users = Array.from({length: 10}, (_, k) => createNewUser(k + 1));
 
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(users);
@@ -49,6 +47,12 @@ export class MainPageComponent implements OnInit {
   ngOnInit(): void {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    setTimeout(() => this.dataSource.paginator = this.paginator);
+  }
+
+  upPage(){
+    let content = document.getElementById('content');
+    content?.scroll(0,0)
   }
 
 
@@ -62,7 +66,7 @@ export class MainPageComponent implements OnInit {
   }
 
   openQuestionDialog() {
-    const dialogRef = this.dialog.open(QuestionModalComponent);
+    const dialogRef = this.dialog.open(QuestionModalComponent, { disableClose: true });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
@@ -70,7 +74,7 @@ export class MainPageComponent implements OnInit {
   }
 
   openFormDialog() {
-    const dialogRef = this.dialog.open(ObraFormComponent);
+    const dialogRef = this.dialog.open(ObraFormComponent, { disableClose: true });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);

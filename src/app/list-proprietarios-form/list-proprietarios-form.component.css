@@ -1,0 +1,70 @@
+.dialog-content-wrapper{
+    width: 30vw;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: #adadad9c; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #838383; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #838383; 
+  border-radius: 10px;
+}
+
+.header{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    background-color: #325ea7;
+    color: white;
+    vertical-align: middle;
+
+}
+
+.close{
+    border-radius: 100%;
+    -ms-flex-align: end;
+    padding: 0px;
+    min-width: 35px;
+    height: 35px;
+    width: 35px;
+}
+
+.header span{
+    vertical-align: -webkit-baseline-middle;
+}
+
+.list{
+    height: 40vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-bottom: 20px;
+}
+
+    .list ng-container{
+        width: 100%;
+    }
+
+.content{
+    padding: 20px;
+    padding-right: 10px;
+    
+}
+
+    .content div{
+        width: 100%;
+    }
+
+    .content mat-selection-list{
+        width: 100%;
+    }

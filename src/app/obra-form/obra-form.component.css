@@ -1,14 +1,58 @@
 .dialog-content-wrapper{
     width: 60vw;
-    height: 80vh;
 }
 
 .header{
-    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 7px;
+    padding-bottom: 7px;
     background-color: #325ea7;
     color: white;
-    height: 30px;
     vertical-align: middle;
+
+}
+
+.formObra{
+    margin-bottom: 20px;
+}
+
+.btn-seach{
+    margin-right: 10px;
+    background-color: #325ea7 !important;
+    color: white;
+    margin-left: 5px;
+}
+
+.formControl{
+   margin: 5px; 
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: #adadad9c; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #838383; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #838383; 
+  border-radius: 10px;
+}
+
+.close{
+    border-radius: 100%;
+    -ms-flex-align: end;
+    padding: 0px;
+    min-width: 35px;
+    height: 35px;
+    width: 35px;
 }
 
 .header span{
@@ -17,6 +61,14 @@
 
 .content{
     padding: 20px;
+    padding-right: 10px;
+    max-height: 60vh;
+    overflow-y:scroll;
+    overflow-x: hidden;
+}
+
+.saveButton{
+    background-color: #325ea7 !important;
 }
 
 .content mat-button{

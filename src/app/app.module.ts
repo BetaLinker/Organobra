@@ -11,6 +11,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatListModule } from '@angular/material/list';
 
 
 import { AppComponent } from './app.component';
@@ -18,13 +19,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { QuestionModalComponent } from './question-modal/question-modal.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { ObraFormComponent } from './obra-form/obra-form.component';
+import { ListProprietariosFormComponent } from './list-proprietarios-form/list-proprietarios-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuestionModalComponent,
     MainPageComponent,
-    ObraFormComponent
+    ObraFormComponent,
+    ListProprietariosFormComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import { ObraFormComponent } from './obra-form/obra-form.component';
     MatSortModule,
     MatButtonModule,
     FlexLayoutModule,
-    MatDialogModule
+    MatDialogModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

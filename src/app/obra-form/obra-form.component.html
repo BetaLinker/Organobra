@@ -1,20 +1,79 @@
 <div class="dialog-content-wrapper">
-    <div class="header">
+    <div class="header" fxLayout="row" fxLayoutAlign="space-between center">
+
         <span>
             Formulário de Obras
         </span>
+        <a mat-button class="close" (click)="close()">
+            <mat-icon>close</mat-icon>
+        </a>
+            
     </div>
     <div class="content">
-        <form class="example-form">
-            <div fxLayout="row">
-                <mat-form-field fxFlex="95">
-                    <mat-label>Proprietário</mat-label>
-                    <input matInput >
-                </mat-form-field>
-                <a mat-button>
-                    <mat-icon>search</mat-icon>
-                </a>
-            </div>
+
+        <form class="formObra">
+
+            <mat-accordion class="card" multi>
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Proprietário
+                        </mat-panel-title>          
+                  </mat-expansion-panel-header>
+
+                    <a mat-button class="btn-seach" (click)="search()">
+                        Buscar Proprietário
+                    </a>
+                        
+                    <div fxLayout="row" fxLayoutAlign="start center" >
+
+                        <mat-form-field fxFlex="70" class="formControl Nome" 
+                                        appearance="outline" color="basic">
+                            <mat-label>Nome</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+
+                        <mat-form-field fxFlex="30" class="formControl Cpf" appearance="outline">
+                            <mat-label>Cpf</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+    
+                    </div>
+                    
+
+                </mat-expansion-panel>
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          Obra
+                        </mat-panel-title>          
+                    </mat-expansion-panel-header>
+
+                    <div fxLayout="row" fxLayoutAlign="start center" >
+
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Company</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+    
+                    </div>
+
+                </mat-expansion-panel>
+
+            </mat-accordion>
+            
         </form>
+
+        <div fxLayout="row" fxLayoutAlign="end center" >
+
+            <button mat-raised-button color="primary" class="saveButton">
+                Salvar
+            </button>
+
+        </div>
+
+
+
     </div>
 </div>
